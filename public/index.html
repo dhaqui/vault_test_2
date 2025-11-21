@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PayPal Return Payer Vault Demo (Sandbox)</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="card">
+        <h1>💳 PayPal Wallet 保存（戻り支払者体験）Sandbox デモ</h1>
+        <p class="muted">
+          初回の購入で PayPal を保存し、次回以降は保存済みウォレットをボタンに表示します。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2 id="button-title">🆕 新規購入と PayPal 保存</h2>
+        <div id="paypal-button-container" class="button-host">
+          <div class="loader">
+            <div class="spinner"></div>
+            <span>PayPal SDK 読み込み中...</span>
+          </div>
+        </div>
+        <div id="hint" class="hint" hidden>💡 既に保存済みのため、戻り支払者体験が有効です。</div>
+        <div id="status" class="status"></div>
+        <div id="error" class="error"></div>
+      </section>
+
+      <section id="customer" class="card" hidden>
+        <h2>👤 Customer</h2>
+        <div id="customer-id" class="mono"></div>
+      </section>
+
+      <section id="vault" class="card" hidden>
+        <h2>📦 Vault 情報</h2>
+        <pre id="vault-json"></pre>
+      </section>
+
+      <section id="order" class="card" hidden>
+        <h2>📄 Order / Capture レスポンス</h2>
+        <pre id="order-json"></pre>
+      </section>
+
+      <div class="actions">
+        <button id="clear">🗑️ テストデータ削除</button>
+      </div>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
